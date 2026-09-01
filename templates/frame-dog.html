@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body_classes %}full-dog{% endblock body_classes %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/static/css/frame-dog.css">
+{% endblock head_css %}
+
+
+{% block content %}
+<div class="picture-container">
+    <div class="dog-container">
+        <img src="/static/images/dog-dewarped-dog.png">
+    </div>
+</div>
+
+<div class="card-container">
+    <h2>Dog</h2>
+    <p>Nulla lobortis bibendum ante, sed tincidunt dui egestas quis. Fusce vestibulum mollis nibh et pretium. Quisque sodales sed ante quis dictum. Praesent in enim velit.</p>
+</div>
+{% endblock content %}

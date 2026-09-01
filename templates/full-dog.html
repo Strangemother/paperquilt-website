@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body_classes %}full-dog{% endblock body_classes %}
+
+{% block head_css %}
+<link rel="stylesheet" href="static/css/full-dog.css">
+{% endblock head_css %}
+
+
+{% block content %}
+<div class="picture-container">
+
+    <div class="sun-container">
+        <div class="sun"></div>
+    </div>
+    <div class="dog-container">
+        <img src="./static/images/dog-only.png">
+    </div>
+</div>
+
+<div class="card-container"></div>
+{% endblock content %}

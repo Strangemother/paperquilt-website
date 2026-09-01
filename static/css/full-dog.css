@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(139deg, hsl(0deg 100% 30%), #a90000);
+    height: 100%;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.picture-container {
+    display: grid;
+    width: 47em;
+    overflow: auto;
+}
+
+.picture-container > * {
+    grid-area: 1/1/1/1;
+}
+
+.sun-container {
+    /* border: solid; */
+    /* display: grid; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+    padding: 3em 8em 0 6em;
+    /* align-items: stretch; */
+    /* align-content: stretch; */
+    /* justify-items: stretch; */
+}
+
+.sun {
+    background: linear-gradient(344deg, hsl(44deg 100% 53%), hsl(45deg 100% 45%));
+    border-radius: 50em;
+    aspect-ratio: 1/1;
+}
+
+.entity-container {
+    /* padding: 4em; */
+    display: flex;
+    max-width: 100vw;
+    overflow: hidden;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.dog-container img {
+    width: 100%;
+}
+
+.dog-container {
+    padding: 2em;
+}
+
+html {height: 100%;padding: 0;margin: 0;}
+
+.logo {
+    position: absolute;
+    padding: 2rem;
+    font-size: 4em;
+    line-height: 1em;
+}

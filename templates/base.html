@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQ - Dog</title>
+    {% block head_css %}{% endblock head_css %}
+</head>
+
+<body class="{% block body_classes %}{% endblock body_classes %}">
+    <div class="logo">
+        <div class="words">
+            PQ
+        </div>
+    </div>
+
+    <div class="entity-container">
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>
