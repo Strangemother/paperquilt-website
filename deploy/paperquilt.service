@@ -1,0 +1,28 @@
+[Unit]
+Description=Paperquilt website
+After=network.target
+
+[Service]
+Type=exec
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/paperquilt-website
+RuntimeDirectory=paperquilt-website
+RuntimeDirectoryMode=0755
+EnvironmentFile=-/etc/paperquilt-website.env
+ExecStart=/var/www/paperquilt-website/.venv/bin/gunicorn \
+    --workers 2 \
+    --bind unix:/run/paperquilt-website/paperquilt.sock \
+    --access-logfile - \
+    --error-logfile - \
+    --capture-output \
+    wsgi:app
+Restart=on-failure
+RestartSec=5
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
