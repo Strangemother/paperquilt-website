@@ -19,6 +19,11 @@ def frame_dog():
     response = render_template('frame-dog.html')
     return response
 
+@app.route('/full-dog-2/')
+def frame_dog_2():
+    response = render_template('full-dog-2.html')
+    return response
+
 
 if __name__ == '__main__':
     main()
