@@ -11,7 +11,7 @@ from app import app
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent
-OUTPUT_DIR = REPOSITORY_ROOT / "github-pages"
+OUTPUT_DIR = REPOSITORY_ROOT / "docs"
 DEFAULT_DOMAIN = "paperquilts.art"
 
 
@@ -61,7 +61,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--domain",
         default=DEFAULT_DOMAIN,
-        help="Custom domain to write into github-pages/CNAME. Use an empty string to skip it.",
+        help="Custom domain to write into docs/CNAME. Use an empty string to skip it.",
     )
     parser.add_argument(
         "--base-url",
