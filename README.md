@@ -50,3 +50,26 @@ python3 -m venv .venv
 ```
 
 The local server listens on `127.0.0.1:5004`. `PORT` and `FLASK_HOST` can override the address, and `FLASK_DEBUG=true` explicitly enables Flask debug mode for local development.
+
+## Generate static site
+
+Run the root-level exporter to render the current Flask routes into `/home/runner/work/paperquilt-website/paperquilt-website/github-pages`:
+
+```sh
+python3 staticify.py
+```
+
+The export includes:
+
+- rendered HTML for each app route
+- copied assets under `github-pages/static/`
+- `github-pages/CNAME` set to `paperquilts.art`
+- `github-pages/.nojekyll`
+
+Optional flags:
+
+```sh
+python3 staticify.py --domain paperquilts.art --base-url https://paperquilts.art
+```
+
+Pass `--domain ""` to skip writing a `CNAME` file.
