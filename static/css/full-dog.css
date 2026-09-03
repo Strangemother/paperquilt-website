@@ -9,7 +9,7 @@ body {
 .picture-container {
     display: grid;
     width: 47em;
-    overflow: auto;
+    overflow: visible;
 }
 
 .picture-container > * {
@@ -61,8 +61,19 @@ html {height: 100%;padding: 0;margin: 0;}
 }
 
 canvas#playspace {
-    outline: solid;
+    /* outline: solid; */
     width: 100%;
     height: 100%;
-    outline-offset: -1px;
+    /* outline-offset: -1px; */
+}
+
+
+.sun {
+    position: relative;
+    transition: all .5s ease;
+}
+
+.dog-container {
+    position: relative;
+    transition: all 0.5s ease;
 }
