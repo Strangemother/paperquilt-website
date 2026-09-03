@@ -50,3 +50,19 @@ python3 -m venv .venv
 ```
 
 The local server listens on `127.0.0.1:5004`. `PORT` and `FLASK_HOST` can override the address, and `FLASK_DEBUG=true` explicitly enables Flask debug mode for local development.
+
+## Generate GitHub Pages files
+
+Render the Flask routes and copy their assets into `github-pages/`:
+
+```sh
+python3 staticify.py
+```
+
+The output is recreated on every run. The root route becomes `github-pages/index.html`, nested routes become directories containing `index.html`, and the complete `static/` directory is copied alongside them. By default, `CNAME` is generated for `paperquilts.art`; omit it when needed with:
+
+```sh
+python3 staticify.py --domain ""
+```
+
+The generated directory is the deployable site root. To update the dedicated deployment branch, generate the files on the source branch, copy the contents of `github-pages/` into the root of the `github-pages` branch, and commit the result there.
