@@ -28,7 +28,8 @@ def export_html_routes(base_url: str) -> None:
             continue
 
         response = client.get(rule.rule, base_url=base_url)
-        response.raise_for_status()
+        if response.status_code >= 400:
+            raise RuntimeError(f"Failed to render {rule.rule}: {response.status_code}")
 
         destination = route_output_path(rule.rule)
         destination.parent.mkdir(parents=True, exist_ok=True)
